@@ -17,7 +17,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.put(`http://localhost:3001/nft`, nft);
+    const response = await axios.put(`https://nft-api-zcns.onrender.com/nft`, nft);
     console.log(response);
   };
 
