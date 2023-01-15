@@ -4,7 +4,7 @@ import axios from "axios";
 
 function App() {
   const URL = process.env.REACT_APP_DEPLOY_URL || `http://localhost:3001/nft`
-
+  console.log("SOY LA URLLLLLL",URL)
   const [nft, setNft] = useState({
     image: "",
     nftName: "",
