@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 
 function App() {
+  const URL = process.env.REACT_APP_DEPLOY_URL || `http://localhost:3001/nft`
+
   const [nft, setNft] = useState({
     image: "",
     nftName: "",
@@ -17,7 +19,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await axios.put(`http://localhost:3001/nft`, nft);
+    const response = await axios.put(URL, nft);
     console.log(response);
   };
 
