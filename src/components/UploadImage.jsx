@@ -7,17 +7,17 @@ const UploadImage = () => {
   const [imageToRemove, setImageToRemove] = useState(null);
 
   const handleRemoveImg = (imgObj) => {
+    console.log("soy el objeto de imagen en handleRemoveImg: ", imgObj);
     setImageToRemove(imgObj.public_id);
-    axios.delete(
-      `http://localhost:3001/nft/${imgObj.public_id}`
-        .then(() => {
-          setImageToRemove(null);
-          setImages((prev) =>
-            prev.filter((img) => img.public_id !== imgObj.public_id)
-          );
-        })
-        .catch((e) => console.log(e))
-    );
+    axios
+      .delete(`http://localhost:3001/nft/${imgObj.public_id}`)
+      .then(() => {
+        setImageToRemove(null);
+        setImages((prev) =>
+          prev.filter((img) => img.public_id !== imgObj.public_id)
+        );
+      })
+      .catch((e) => console.log(e));
   };
 
   const handleOpenWidget = async () => {
@@ -44,9 +44,12 @@ const UploadImage = () => {
       <div className="images-preview-container">
         {images.map((image) => (
           <div className="image-preview">
-            <img src={image.url} alt="img"/>
+            <img src={image.url} alt="img" />
             {imageToRemove !== image.public_id && (
-              <i className="fa fa-times-circle close-icon" onClick={() => handleRemoveImg(image)}></i>
+              <i
+                className="fa fa-times-circle close-icon"
+                onClick={() => handleRemoveImg(image)}
+              ></i>
             )}
           </div>
         ))}
