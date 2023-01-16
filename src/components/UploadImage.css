@@ -18,3 +18,15 @@
     height: 150px;
     object-fit: cover;
 }
+
+.close-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+}
+
+.close-icon:hover {
+    cursor: pointer;
+    color: red;
+}
