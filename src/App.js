@@ -1,10 +1,10 @@
 import "./App.css";
 import { useState } from "react";
 import axios from "axios";
+import UploadImage from "./components/UploadImage";
 
 function App() {
-  const URL = process.env.REACT_APP_DEPLOY_URL || `http://localhost:3001/nft`
-  console.log("SOY LA URLLLLLL",URL)
+  const URL = process.env.REACT_APP_DEPLOY_URL || `http://localhost:3001/nft`;
   const [nft, setNft] = useState({
     image: "",
     nftName: "",
@@ -25,7 +25,6 @@ function App() {
 
   const handleChange = (e) => {
     setNft({ ...nft, [e.target.name]: e.target.value });
-    
   };
 
   // const handleOpenWidget = async () => {
@@ -54,12 +53,12 @@ function App() {
       <br />
       <br />
       <input
-              className="form-control mb-3"
-              placeholder="Direct link to your NFT image"
-              name="image"
-              value={nft.image}
-              onChange={handleChange}
-            ></input>
+        className="form-control mb-3"
+        placeholder="Direct link to your NFT image"
+        name="image"
+        value={nft.image}
+        onChange={handleChange}
+      ></input>
       <br />
       <br />
       <h3 className="fw-bold">Token details</h3>
@@ -145,6 +144,7 @@ function App() {
         </div>
       </div>
       {/* <button onClick={() => handleOpenWidget()}>UPLOAD IMAGE</button> */}
+      <UploadImage />
     </div>
   );
 }

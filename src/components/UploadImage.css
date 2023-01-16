@@ -1,3 +1,20 @@
 .upload {
     margin: 0 auto;
 }
+
+.images-preview-container {
+    display: flex;
+    justify-content: left;
+}
+.image-preview {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+}
+
+.image-preview img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
