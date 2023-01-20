@@ -4,7 +4,7 @@ import axios from "axios";
 import UploadImage from "./components/UploadImage";
 
 function App() {
-  const URL = process.env.REACT_APP_DEPLOY_URL || `http://localhost:3001/nft`;
+  const URL = process.env.REACT_APP_DEPLOY_URL || process.env.REACT_APP_LOCAL_URL;
   const [nft, setNft] = useState({
     image: "",
     nftName: "",
@@ -96,8 +96,7 @@ function App() {
 
             <input
               className="form-control mb-3"
-              placeholder="Recipient address in the format of <chain>:<address> or
-          email:<email_address>:<chain>."
+              placeholder="somebody@example.com"
               name="email"
               value={nft.email}
               onChange={handleChange}

@@ -10,7 +10,7 @@ const UploadImage = () => {
     console.log("soy el objeto de imagen en handleRemoveImg: ", imgObj);
     setImageToRemove(imgObj.public_id);
     axios
-      .delete(`http://localhost:3001/nft/${imgObj.public_id}`)
+      .delete(`${process.env.REACT_APP_LOCAL_URL || process.env.URL_DEPLOY}/${imgObj.public_id}`)
       .then(() => {
         setImageToRemove(null);
         setImages((prev) =>
