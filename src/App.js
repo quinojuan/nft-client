@@ -3,6 +3,8 @@ import { useState } from "react";
 import axios from "axios";
 import UploadImage from "./components/UploadImage";
 
+
+
 function App() {
   const URL = process.env.REACT_APP_DEPLOY_URL || process.env.REACT_APP_LOCAL_URL;
   const [nft, setNft] = useState({
